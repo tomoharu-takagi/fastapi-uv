@@ -1,0 +1,13 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  fastapi:
+    build: .
+    tty: true
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./src:/app
+      - ./pyproject.toml:/app/pyproject.toml
+      - ./uv.lock:/app/uv.lock
